@@ -1,0 +1,39 @@
+
+@import "tailwindcss";
+
+html,body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family:"lonalista";
+  src: url('/Lonalista.otf') format('opentype');
+  font-weight:normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "helvetica";
+  src: url("/Helvetica.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "helvetica-bold";
+  src: url("/Helvetica-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+ .font-helvetica {
+  font-family: "helvetica", sans-serif;
+}
+
+
+.font-lonalista {
+  font-family: "lonalista", sans-serif;
+}
+
