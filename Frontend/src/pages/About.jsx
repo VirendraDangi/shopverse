@@ -153,7 +153,7 @@ const About = () => {
         end: "+=230%",
         pin: true,
         pinSpacing: false,
-        markers: true // Set to true for debugging
+       
       });
 
       // Image animations
