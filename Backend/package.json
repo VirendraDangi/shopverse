@@ -2,9 +2,9 @@
   "name": "shopverse",
   "version": "1.0.0",
   "description": "Fake product API using json-server",
-  "scripts": {
-    "start": "chmod +x ./node_modules/.bin/json-server && json-server --watch db.json --port $PORT"
-  },
+ "scripts": {
+  "start": "json-server --watch db.json --port $PORT"
+},
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
   }
