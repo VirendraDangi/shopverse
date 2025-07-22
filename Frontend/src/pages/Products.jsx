@@ -266,7 +266,7 @@ const Products = () => {
                 {/* Image Container */}
                 <div className="relative overflow-hidden rounded-t-3xl bg-gradient-to-br from-gray-50 to-amber-50/50 p-6">
                   
-                    <img src={`http://localhost:3000${product.image}`}
+                    <img src={product.image}
                     alt={product.title}
                     className="h-64 w-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out rounded-xl shadow-lg"
                   />
