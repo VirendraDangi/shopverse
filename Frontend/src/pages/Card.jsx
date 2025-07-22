@@ -161,7 +161,7 @@ const Card = () => {
                     <div className="relative mb-4 md:mb-0 md:mr-6">
                       <div className="w-full md:w-40 h-40 bg-gradient-to-br from-gray-50 to-amber-50/50 rounded-2xl overflow-hidden shadow-lg">
                         <img
-                          src={item.image}
+                          src={`http://localhost:3000${item.image}`}
                           alt={item.title}
                           className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
                         />

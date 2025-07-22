@@ -8,6 +8,7 @@ import ProductDetail from '../pages/ProductDetail'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import ProtectedRoute from '../component/ProtectedRoute';
+
 // import { AuthProvider } from '../context/AuthContext'; // If you have it
 
 

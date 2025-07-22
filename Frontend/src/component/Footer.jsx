@@ -60,7 +60,7 @@ const FooterParallax = () => {
      className="group font-helvetica absolute top-48 left-5 cursor-pointer bg-green-600 px-4 py-2 rounded-3xl text-amber-50 flex items-center transition"
    >
      <span className="transform text-xl transition-all duration-300 group-hover:-translate-x-2">
-       Contact us
+     <a href="https://www.instagram.com/techburner/?hl=en">Contact us</a>  
      </span>
      <span className="ml-2 transform transition-all duration-300 group-hover:translate-x-2">
        <GoArrowRight size={20} />
@@ -76,7 +76,7 @@ const FooterParallax = () => {
       <div>
         <p className="text-lg right-3 space-x-6 absolute" >
          <button>
-               Home
+             <a href="/">Home</a>
             </button>  
             <button>
                     career
@@ -90,13 +90,13 @@ const FooterParallax = () => {
      <div>
         <p className="text-lg right-3 mt-8 space-x-4 absolute" >
          <button>
-               Contact
+              <a href="https://www.instagram.com/techburner/?hl=en">Contact</a>  
             </button>  
             <button>
                 Solution
             </button>
            <button>
-              Linkedin
+              <a href="https://in.linkedin.com/in/shlok-srivastava-730354125">Linkedin</a>
            </button>
         </p>
       </div>

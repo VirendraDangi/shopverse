@@ -102,7 +102,8 @@ const ProductDetail = () => {
               <div className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 border border-amber-200/50 shadow-2xl">
                 <div className="aspect-square bg-gradient-to-br from-white to-amber-50/50 rounded-2xl p-6 relative overflow-hidden">
                   <img
-                    src={productImages[selectedImage]}
+                  src={`http://localhost:3000${productImages[selectedImage]}`}
+                    // src={productImages[selectedImage]}
                     alt={product.title}
                     className="w-full h-full object-contain transition-all duration-500 group-hover:scale-110"
                   />

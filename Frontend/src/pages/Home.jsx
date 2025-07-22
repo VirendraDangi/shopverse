@@ -3,6 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { NavLink, useNavigate } from "react-router-dom";
   import Lenis from '@studio-freight/lenis';
+import DemoScrollGallery from "../component/home/ScrollGallery";
+import FooterParallax from "../component/Footer";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -39,11 +41,11 @@ useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top top ",
+        start: "top 3top ",
         end: "+=300%",
         scrub: true,
         pin: true,
-        // markers: true,
+        markers: false,
       },
     });
 
@@ -51,7 +53,7 @@ useEffect(() => {
     tl.fromTo(
       img1Ref.current,
       { scale: 1, opacity: 1 },
-      { scale: 5, opacity: 1, duration: 8 ,delay:1 }
+      { scale: 5, opacity: 1, duration: 8  }
     );
 
 
@@ -117,21 +119,21 @@ useEffect(() => {
   const getImage = () => {
     switch (hovered) {
       case "women":
-        return "/page-2.jpg";
+        return "/home_img/page-2.jpg";
       case "men":
-        return "/men-shoe.jpg";
+        return "/home_img/men-shoe.jpg";
       case "kids":
-        return "/kid-shoe.jpg";
+        return "/home_img/kid-shoe.jpg";
       default:
-        return "/page-2.jpg"; // default image
+        return "/home_img/page-2.jpg"; // default image
     }
   }
 
 
 
   return (
-    <>
-      <div className="relative h-screen w-full overflow-hidden">
+    <  >
+      <div className="relative text-amber-50 h-screen w-full overflow-hidden">
         {/* Background Video - Fixed Scaling */}
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -142,11 +144,11 @@ useEffect(() => {
           preload="auto"
         >
           <source
-            src="/FA25_07172025_PLP_Premium_eSpot-01_Desktop_458x673_Video.webm"
+            src="/home_img/FA25_07172025_PLP_Premium_eSpot-01_Desktop_458x673_Video.webm"
             type="video/webm"
           />
           <source
-            src="/FA25_07172025_PLP_Premium_eSpot-01_Desktop_458x673_Video.mp4"
+            src="/home_img/FA25_07172025_PLP_Premium_eSpot-01_Desktop_458x673_Video.mp4"
             type="video/mp4"
           />
         </video>
@@ -158,17 +160,17 @@ useEffect(() => {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-radial from-transparent via-transparent to-black/30 z-20" />
 
         {/* Brand Logo */}
-        <div className={`absolute top-6 left-6 text-white font-bold text-xl tracking-wider transition-all duration-1000 delay-200 z-40 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+        <div className={`absolute top-6 left-6 text-amber-50 font-bold text-xl tracking-wider transition-all duration-1000 delay-200 z-40 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
           SHOPVERSE
         </div>
         
 
         {/* Main Content */}
-        <div className="relative z-30 flex flex-col justify-end items-start h-full text-white px-4 pb-12">
+        <div className="relative z-30 flex flex-col justify-end items-start h-full text-amber-50 px-4 pb-12">
           {/* Hero Title */}
           <h1 className={`text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
-              The Premium Old School
+              The Premium Old Skool
             </span>
           </h1>
 
@@ -227,16 +229,23 @@ useEffect(() => {
   </div>
 </div>
 
+{/* section-3 */}
 
-  {/* section-3  */}
+ <div>
+  <DemoScrollGallery/>
+ </div>
 
- <div className="h-[75vh] w-full flex items-center justify-center gap-x-5 px-4 overflow-hidden 
+
+
+  {/* section-4  */}
+
+ <div className="h-[75vh] bg-amber-50  w-full flex items-center justify-center gap-x-5 px-4 overflow-hidden 
                 max-sm:flex-col max-sm:h-auto max-sm:gap-y-8 max-sm:py-6">
   {/* Box 1 */}
-  <div className="relative bg-[url('/76-1.svg')] bg-no-repeat bg-contain bg-left-top h-[30vh] w-[30vw] transition duration-300 hover:text-emerald-800 
+  <div className="relative bg-[url('/home_img/76-1.svg')] bg-no-repeat bg-contain bg-left-top h-[30vh] w-[30vw] transition duration-300 hover:text-emerald-800 
                   max-sm:w-full max-sm:h-[40vh]">
     <img
-      src="/10003.png"
+      src="/home_img/10003.png"
       alt=""
       className="absolute top-4 left-7 w-[20vw] h-auto max-sm:w-[60vw] max-sm:left-1/2 max-sm:-translate-x-1/2"
     />
@@ -245,7 +254,7 @@ useEffect(() => {
       <p>Beige</p>
       <button
        onClick={()=>seemorehandler()}
-      className=" cursor-pointer group px-6 py-2 mt-4 bg-emerald-600 text-white rounded-full shadow-md hover:bg-emerald-700 transition duration-300 ease-in-out flex gap-0.5 justify-center">
+      className=" cursor-pointer group px-6 py-2 mt-4 bg-emerald-600 text-amber-50 rounded-full shadow-md hover:bg-emerald-700 transition duration-300 ease-in-out flex gap-0.5 justify-center">
         {"See More".split("").map((char, index) => (
           <span
             key={index}
@@ -259,10 +268,10 @@ useEffect(() => {
   </div>
 
   {/* Box 2 */}
-  <div className="relative bg-[url('/10001.svg')] bg-no-repeat bg-contain bg-left-top h-[30vh] w-[30vw] 
+  <div className="relative bg-[url('/home_img/10001.svg')] bg-no-repeat bg-contain bg-left-top h-[30vh] w-[30vw] 
                   max-sm:w-full max-sm:h-[40vh]">
     <img
-      src="/10004.png"
+      src="/home_img/10004.png"
       alt=""
       className="absolute top-4 left-7 w-[20vw] h-auto max-sm:w-[60vw] max-sm:left-1/2 max-sm:-translate-x-1/2"
     />
@@ -285,10 +294,10 @@ useEffect(() => {
   </div>
 
   {/* Box 3 */}
-  <div className="relative bg-[url('/10002.svg')] bg-no-repeat bg-contain bg-left-top h-[30vh] w-[30vw] 
+  <div className="relative bg-[url('/home_img/10002.svg')] bg-no-repeat bg-contain bg-left-top h-[30vh] w-[30vw] 
                   max-sm:w-full max-sm:h-[40vh]">
     <img
-      src="/10005.png"
+      src="/home_img/10005.png"
       alt=""
       className="absolute top-4 left-7 w-[20vw] h-auto max-sm:w-[60vw] max-sm:left-1/2 max-sm:-translate-x-1/2"
     />
@@ -312,12 +321,12 @@ useEffect(() => {
 </div>
 
 
-{/* section-4 */}
+{/* section-5 */}
 
 
 <div className="">
   <div>
-    <div ref={containerRef} className="h-[150vh] bg-white relative overflow-hidden 
+    <div ref={containerRef} className="h-[150vh]  bg-amber-50 relative overflow-hidden
                                         max-sm:h-auto max-sm:py-20">
       <div className="sticky top-0 h-screen flex items-center justify-center 
                       max-sm:relative max-sm:flex-col max-sm:gap-8 max-sm:h-auto">
@@ -325,7 +334,7 @@ useEffect(() => {
         {/* Left Text */}
         <div
           ref={leftTextRef}
-          className="absolute top-15 left-10 text-5xl text-amber-50 font-helvetica font-bold z-50
+          className="absolute top-15 left-10 text-5xl text-black font-helvetica font-bold z-50
                      max-sm:static max-sm:text-center max-sm:text-2xl"
         >
           Comfort That Keeps Up
@@ -334,7 +343,7 @@ useEffect(() => {
         {/* Right Text */}
         <div
           ref={rightTextRef}
-          className="absolute right-10 bottom-10 text-5xl font-helvetica font-bold text-amber-50 z-50
+          className="absolute right-10 bottom-10 text-5xl font-helvetica font-bold text-black z-50
                      max-sm:static max-sm:text-center max-sm:text-2xl"
         >
           Built for Play. Made for Comfort
@@ -343,16 +352,16 @@ useEffect(() => {
         {/* Image 1 */}
         <img
           ref={img1Ref}
-          src="/1img.jpg"
+          src="/home_img/1img.jpg"
           alt="Image 1"
-          className="absolute w-[300px] h-auto object-cover rounded-xl z-10
+          className="absolute  transform origin-center  w-[300px] h-auto  object-cover rounded-xl z-10
                      max-sm:static max-sm:w-[80%]"
         />
 
         {/* Image 2 */}
         <img
           ref={img2Ref}
-          src="/img2.jpg"
+          src="/home_img/img2.jpg"
           alt="Image 2"
           className="absolute w-[300px] h-auto object-cover rounded-xl z-20
                      max-sm:static max-sm:w-[80%]"
@@ -361,7 +370,7 @@ useEffect(() => {
         {/* Image 3 */}
         <img
           ref={img3Ref}
-          src="/3img.jpg"
+          src="/home_img/3img.jpg"
           alt="Image 3"
           className="absolute w-[300px] h-auto object-cover rounded-xl z-30
                      max-sm:static max-sm:w-[80%]"
@@ -373,68 +382,7 @@ useEffect(() => {
 
 
 
-{/* footer */}
-
-
-<div ref={footerRef} className="opacity-0 translate-y-20">
-  <footer className="bg-gray-900 text-white py-10 px-6 max-sm:px-4 max-sm:py-8">
-    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 max-sm:gap-6">
-      
-      {/* Brand */}
-      <div className="max-sm:text-center">
-        <h2 className="text-2xl font-bold font-lonalista text-amber-400">ShoeVerse</h2>
-        <p className="text-sm mt-2 text-gray-400">Step into comfort and style with our curated collection of shoes for every walk of life.</p>
-      </div>
-
-      {/* Shop Links */}
-      <div className="max-sm:text-center">
-        <h3 className="text-lg font-semibold mb-3">Shop</h3>
-        <ul className="space-y-2 text-sm text-gray-400">
-          <li><a href="#" className="hover:text-white">Men's Shoes</a></li>
-          <li><a href="#" className="hover:text-white">Women's Shoes</a></li>
-          <li><a href="#" className="hover:text-white">Kids' Shoes</a></li>
-          <li><a href="#" className="hover:text-white">New Arrivals</a></li>
-        </ul>
-      </div>
-
-      {/* Company Links */}
-      <div className="max-sm:text-center">
-        <h3 className="text-lg font-semibold mb-3">Company</h3>
-        <ul className="space-y-2 text-sm text-gray-400">
-          <li><a href="#" className="hover:text-white">About Us</a></li>
-          <li><a href="#" className="hover:text-white">Careers</a></li>
-          <li><a href="#" className="hover:text-white">Press</a></li>
-          <li><a href="#" className="hover:text-white">Contact</a></li>
-        </ul>
-      </div>
-
-      {/* Social + Newsletter */}
-      <div className="max-sm:text-center">
-        <h3 className="text-lg font-semibold mb-3">Stay Connected</h3>
-        <div className="flex justify-center md:justify-start space-x-4 mb-4">
-          <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-instagram"></i></a>
-          <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-facebook"></i></a>
-          <a href="#" className="text-gray-400 hover:text-white"><i className="fab fa-twitter"></i></a>
-        </div>
-        <form className="flex items-center max-sm:flex-col max-sm:gap-2">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="bg-gray-800 text-sm px-3 py-2 w-full outline-none placeholder-gray-500 rounded-l max-sm:rounded max-sm:w-full"
-          />
-          <button className="bg-amber-400 text-black px-4 py-2 rounded-r text-sm hover:bg-amber-500 transition max-sm:rounded max-sm:w-full">
-            Subscribe
-          </button>
-        </form>
-      </div>
-    </div>
-
-    {/* Bottom */}
-    <div className="mt-10 text-center text-sm text-gray-500 max-sm:mt-6">
-      &copy; {new Date().getFullYear()} ShoeVerse. All rights reserved.
-    </div>
-  </footer>
-</div>
+<FooterParallax/>
 
 
 

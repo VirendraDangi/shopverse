@@ -97,32 +97,32 @@ Illustrator & Graphic Artist
             <div className="relative w-[40vw] h-[40vw] rounded-2xl overflow-hidden mx-auto">
               <img
                 className="absolute w-full h-full object-cover split-image"
-                src="/slok.jpg"
+                src="/about_Img/slok.png"
                 alt="placeholder"
               />
               <img
                 className="absolute w-full h-full object-cover split-image"
-                src="/Dharmender Singh.jpg"
+                src="/about_Img/dhrmender.avif"
                 alt="placeholder"
               />
               <img
                 className="absolute w-full h-full object-cover split-image"
-                src="/Himanshu Shukla.jpg"
+                src="/about_Img/himanshu.avif"
                 alt="placeholder"
               />
                 <img
                 className="absolute w-full h-full object-cover split-image"
-                src="/muskan singhaniya.jpg"
+                src="/about_Img/muskan singhaniya.jpg"
                 alt="placeholder"
               />
                 <img
                 className="absolute w-full h-full object-cover split-image"
-                src="/utkarsh malhotra.jpg"
+                src="/about_Img/uthkarsh.avif"
                 alt="placeholder"
               />
                 <img
                 className="absolute w-full h-full object-cover split-image"
-                src="/Venkatesh Parik.jpg"
+                src="/about_Img/venktesh.avif"
                 alt="placeholder"
               />
             </div>

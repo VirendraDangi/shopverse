@@ -1,27 +1,182 @@
 import { Asyncloadproduct } from '../store/action/Product.action';
 import { AsyncPostCart } from '../store/action/CardAction';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Lenis from '@studio-freight/lenis';
+import gsap from 'gsap';
+// Import SplitText - make sure you have the premium plugin
+import { SplitText } from 'gsap/SplitText';
+import FooterParallax from '../component/Footer';
+
+gsap.registerPlugin(SplitText);
 
 const Products = () => {
-  
- const handlecol = ()=>{
-   toast.info("it will available soon")
- }
+  const headingRef = useRef(null);
+  const paraRef = useRef(null);
+  const sectionRef = useRef(null);
 
+  useEffect(() => {
+    console.log("Heading Element:", headingRef.current);
+    console.log("Paragraph Element:", paraRef.current);
+    
+    const runAnimation = () => {
+      // Check if elements exist
+      if (!headingRef.current || !paraRef.current) {
+        console.log("Elements not ready yet");
+        return;
+      }
 
-const lenis = new Lenis();
+      // Create a GSAP context for better cleanup
+      const ctx = gsap.context(() => {
+       
+        gsap.set([headingRef.current, paraRef.current], {
+          visibility: 'hidden'
+        });
 
-// Use requestAnimationFrame to continuously update the scroll
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
+        try {
+          // Create SplitText instance
+          const splitInstance = new SplitText(headingRef.current, { 
+            type: 'chars',
+            charsClass: 'split-char'
+          });
+          
+          console.log("Split chars:", splitInstance.chars);
+          console.log("Split chars length:", splitInstance.chars.length);
+          
+        
+          
+          // Alternative approach - get chars directly from DOM
+          const charElements = headingRef.current.querySelectorAll('.gsap-split-char, [class*="split"]');
+          console.log("Char elements from DOM:", charElements);
+          
+          let charsToAnimate = [];
+          
+          // Try different ways to get the characters
+          if (splitInstance.chars && splitInstance.chars.length > 0) {
+            charsToAnimate = splitInstance.chars;
+          } else if (charElements.length > 0) {
+            charsToAnimate = Array.from(charElements);
+          } else {
+            // Last resort - try to get any div children
+            const divs = headingRef.current.querySelectorAll('div');
+            if (divs.length > 0) {
+              charsToAnimate = Array.from(divs);
+            }
+          }
+          
+          console.log("Final chars to animate:", charsToAnimate);
+          
+          if (charsToAnimate.length > 0) {
+            // Show heading before animating
+            gsap.set(headingRef.current, { visibility: 'visible' });
+            
+            // Set initial state for characters
+            gsap.set(charsToAnimate, {
+              x: 150,
+              opacity: 0
+            });
+            
+            // Animate characters
+            gsap.to(charsToAnimate, {
+              x: 0,
+              opacity: 1,
+              duration: 0.7,
+              ease: "power4.out",
+              stagger: 0.04,
+              onComplete: () => {
+                console.log("Animation complete, reverting split");
+                // Clean up split text after animation
+                setTimeout(() => {
+                  // splitInstance.revert();
+                }, 100);
+              }
+            });
+          } else {
+            console.log("No characters found, using fallback animation");
+            // Fallback if no characters
+            gsap.set(headingRef.current, { visibility: 'visible' });
+            gsap.from(headingRef.current, {
+              x: 150,
+              opacity: 0,
+              duration: 0.7,
+              ease: "power4.out"
+            });
+          }
+        
+        } catch (error) {
+          console.error("SplitText error:", error);
+          // Fallback animation if SplitText fails
+          gsap.set(headingRef.current, { visibility: 'visible' });
+          gsap.from(headingRef.current, {
+            x: 150,
+            opacity: 0,
+            duration: 0.7,
+            ease: "power4.out"
+          });
+        }
 
-requestAnimationFrame(raf);
+        // Paragraph animation
+        gsap.fromTo(paraRef.current, 
+          {
+            y: 30,
+            opacity: 0,
+            visibility: 'hidden'
+          },
+          {
+            y: 0,
+            opacity: 1,
+            visibility: 'visible',
+            duration: 1,
+            delay: 0.5,
+            ease: 'power3.out'
+          }
+        );
+
+      }, sectionRef);
+
+      return () => ctx.revert();
+    };
+
+    // Multiple approaches to ensure elements and fonts are ready
+    const initAnimation = () => {
+      // Wait for next tick to ensure DOM is ready
+      requestAnimationFrame(() => {
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => {
+            setTimeout(runAnimation, 100); // Small delay after fonts load
+          });
+        } else {
+          // Fallback if fonts API not available
+          setTimeout(runAnimation, 500);
+        }
+      });
+    };
+
+    initAnimation();
+  }, []);
+
+  const handlecol = () => {
+    toast.info("It will be available soon");
+  };
+
+  // Initialize Lenis (move outside component if used globally)
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Cleanup function
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -56,20 +211,30 @@ requestAnimationFrame(raf);
   };
 
   return (
+    <>
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 py-16 px-4">
       {/* Hero Header */}
-      <div className="text-center mb-20">
+      <div ref={sectionRef} className="text-center mb-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-7xl font-black font-helvetica tracking-tight mb-6">
+          <h1 
+            style={{ visibility: 'hidden' }}
+            className="text-6xl md:text-7xl font-black font-helvetica tracking-tight mb-6" 
+            ref={headingRef}
+          >
             <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-amber-700 bg-clip-text text-transparent">
-              Premium
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-transparent">
-              Collection
+              Premium Collection
             </span>
           </h1>
-          <p className="text-gray-700 text-xl max-w-3xl mx-auto leading-relaxed font-medium">
+
+          <p
+            ref={paraRef}
+            style={{
+              opacity: 0,
+              transform: 'translateY(30px)',
+              visibility: 'hidden',
+            }}
+            className="text-gray-700 text-xl max-w-3xl mx-auto leading-relaxed font-medium"
+          >
             Discover our curated selection of exceptional footwear, crafted for those who appreciate quality, comfort, and timeless style
           </p>
           
@@ -100,8 +265,8 @@ requestAnimationFrame(raf);
 
                 {/* Image Container */}
                 <div className="relative overflow-hidden rounded-t-3xl bg-gradient-to-br from-gray-50 to-amber-50/50 p-6">
-                  <img
-                    src={product.image}
+                  
+                    <img src={`http://localhost:3000${product.image}`}
                     alt={product.title}
                     className="h-64 w-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out rounded-xl shadow-lg"
                   />
@@ -215,13 +380,18 @@ requestAnimationFrame(raf);
             Join thousands of satisfied customers who trust us for their footwear needs. Quality, comfort, and style guaranteed.
           </p>
           <button
-          onClick={()=>handlecol}
-           className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg font-helvetica tracking-wide">
+            onClick={handlecol}
+            className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg font-helvetica tracking-wide"
+          >
             Explore All Collections
           </button>
         </div>
       </div>
+   
+   
     </div>
+      <FooterParallax/>
+    </>
   );
 };
 
