@@ -38,7 +38,7 @@
       "price": 19.99,
       "description": "Classic Old Skool sneakers in cocona colorway. Features the iconic side stripe design with durable canvas and suede upper construction. Perfect for casual wear with vintage-inspired styling.",
       "category": "woman shoes",
-      "image": "/img-1.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-1.jpg",
       "rating": {
         "rate": 3.9,
         "count": 120
@@ -50,7 +50,7 @@
       "price": 15.99,
       "description": "Old Skool inspired mule-style slip-on shoes with backless design. Easy to wear with classic skate shoe styling. Features durable canvas upper and signature waffle outsole for comfort.",
       "category": "children shoes",
-      "image": "/img-2.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-2.jpg",
       "rating": {
         "rate": 4.1,
         "count": 259
@@ -62,7 +62,7 @@
       "price": 19.99,
       "description": "Old Skool blue mule sneakers with slip-on convenience and classic blue colorway. Features the signature side stripe and comfortable mule design perfect for easy on-and-off wear.",
       "category": "children shoes",
-      "image": "/img-3.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-3.jpg",
       "rating": {
         "rate": 4.7,
         "count": 500
@@ -74,7 +74,7 @@
       "price": 12.99,
       "description": "Old Skool sneakers in sophisticated frost gray colorway. Classic lace-up design with canvas and suede upper in a versatile gray tone that pairs with any outfit.",
       "category": "unisex shoes",
-      "image": "/img-4.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-4.jpg",
       "rating": {
         "rate": 2.1,
         "count": 430
@@ -86,7 +86,7 @@
       "price": 15.99,
       "description": "Premium Old Skool sneakers in rich dark brown colorway. Features classic skate shoe silhouette with earthy brown tones, perfect for casual and streetwear styling.",
       "category": "unisex shoes",
-      "image": "/img-5.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-5.jpg",
       "rating": {
         "rate": 4.6,
         "count": 400
@@ -98,7 +98,7 @@
       "price": 10.99,
       "description": "Old Skool sneakers in unique dried kelp black colorway. Combines deep black with subtle green undertones, featuring the classic side stripe and durable construction.",
       "category": "lifestyle shoes",
-      "image": "/img-6.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-6.jpg",
       "rating": {
         "rate": 3.9,
         "count": 70
@@ -110,7 +110,7 @@
       "price": 12.99,
       "description": "Old Skool sneakers in soft dawn pink colorway. Features feminine pink tones with classic skate shoe design, perfect for adding a pop of color to casual outfits.",
       "category": "women's shoes",
-      "image": "/img-7.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-7.jpg",
       "rating": {
         "rate": 3,
         "count": 400
@@ -122,7 +122,7 @@
       "price": 19.99,
       "description": "Iconic Classic Slip-On shoes featuring the famous black and white checkerboard pattern. Easy slip-on design with elastic side accents and signature waffle outsole.",
       "category": "fashion shoes",
-      "image": "/img-8.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-8.jpg",
       "rating": {
         "rate": 1.9,
         "count": 100
@@ -134,7 +134,7 @@
       "price": 14.99,
       "description": "Classic Slip-On shoes in white checkerboard pattern. Features the iconic checkerboard design in clean white colorway with easy slip-on convenience and comfortable fit.",
       "category": "formal shoes",
-      "image": "/img-9.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-9.jpg",
       "rating": {
         "rate": 3.3,
         "count": 203
@@ -146,7 +146,7 @@
       "price": 15.99,
       "description": "Classic Slip-On with platform sole in light pink checkerboard pattern. Elevated design adds height while maintaining the iconic checkerboard style in soft pink tones.",
       "category": "comfort shoes",
-      "image": "/img-10.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-10.jpg",
       "rating": {
         "rate": 2.9,
         "count": 470
@@ -158,7 +158,7 @@
       "price": 15.99,
       "description": "Premium Old Skool sneakers with chunky white design. Features thick, substantial sole construction in clean white colorway for a bold, modern take on the classic silhouette.",
       "category": "asthethic shoes",
-      "image": "/img-11.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-11.jpg",
       "rating": {
         "rate": 4.8,
         "count": 319
@@ -170,7 +170,7 @@
       "price": 12.99,
       "description": "Premium Old Skool KNU sneakers featuring elevated design elements. Modern interpretation of the classic Old Skool with premium materials and updated construction details.",
       "category": "outdoor shoes",
-      "image": "/img-12.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-12.jpg",
       "rating": {
         "rate": 4.8,
         "count": 400
@@ -182,7 +182,7 @@
       "price": 19.99,
       "description": "Classic Old Skool sneakers in timeless black and white colorway. Features the signature side stripe in contrasting white against black canvas and suede upper construction.",
       "category": "fashion shoes",
-      "image": "/img-13.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-13.jpg",
       "rating": {
         "rate": 2.9,
         "count": 250
@@ -194,7 +194,7 @@
       "price": 16.99,
       "description": "Premium Old Skool sneakers in bright light yellow colorway. Eye-catching yellow design with classic skate shoe construction, perfect for making a bold fashion statement.",
       "category": "formal shoes",
-      "image": "/img-16.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-16.jpg",
       "rating": {
         "rate": 2.2,
         "count": 140
@@ -206,7 +206,7 @@
       "price": 18.99,
       "description": "Premium Old Skool sneakers with vintage retro styling. Features classic throwback design elements with authentic retro colorways and traditional skate shoe construction.",
       "category": "fashion shoes",
-      "image": "/img-17.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-17.jpg",
       "rating": {
         "rate": 2.6,
         "count": 235
@@ -220,7 +220,7 @@
       "price": 15.99,
       "description": "Old Skool inspired mule-style slip-on shoes with backless design. Easy to wear with classic skate shoe styling. Features durable canvas upper and signature waffle outsole for comfort.",
       "category": "children shoes",
-      "image": "/img-2.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-2.jpg",
       "rating": {
         "rate": 4.1,
         "count": 259
@@ -232,7 +232,7 @@
       "price": 19.99,
       "description": "Old Skool blue mule sneakers with slip-on convenience and classic blue colorway. Features the signature side stripe and comfortable mule design perfect for easy on-and-off wear.",
       "category": "children shoes",
-      "image": "/img-3.jpg",
+      "image": "https://shopverse-xo0h.onrender.com/img-3.jpg",
       "rating": {
         "rate": 4.7,
         "count": 500
