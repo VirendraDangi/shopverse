@@ -68,7 +68,7 @@ const Card = () => {
   
   if(products.length === 0){
     return (
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 flex items-center justify-center">
+      <div className="min-h-screen bg-amber-50 flex items-center justify-center">
         <div className="text-center">
           <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-pulse">
             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,7 +96,7 @@ const Card = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br mt-5 from-amber-50 via-orange-50 to-yellow-50 py-16 px-4">
+    <div className="min-h-screen  bg-amber-50 py-20 px-4 ">
       {/* Hero Header */}
       <div className="text-center mb-16">
         <div className="max-w-4xl mx-auto">

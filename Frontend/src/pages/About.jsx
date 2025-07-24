@@ -207,7 +207,7 @@ const About = () => {
       visibility: 'hidden',
     }}
   >
-    ShopVerse is a startup based in New Delhi, developing old <br /> skool shoe and offering testing services
+    ShoeVerse is a startup based in New Delhi, developing old <br /> skool shoe and offering testing services
   </p>
 
   <button
@@ -355,7 +355,7 @@ const About = () => {
     ref={textContainerRef} 
    >
             <h1 className='top-18 relative text-6xl w-full left-5 font-helvetica font-bold'>
-              The ShopVerse team <br /> is dedicated to building <br /> old skool shoe
+              The ShoeVerse team <br /> is dedicated to building <br /> old skool shoe
             </h1>
             <small className='top-20 leading-[1.3] text-sm relative w-full left-5 font-helvetica'>
               <span className="block">We are a diverse group with complementary backgrounds in engineering, chemistry, and business.</span>

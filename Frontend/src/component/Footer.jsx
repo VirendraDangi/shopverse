@@ -50,7 +50,7 @@ const FooterParallax = () => {
         Ready to Elevate <br /> Your Style?
       </h2>
       <p className="mt-4 max-w-2xl text-lg  absolute top-25 text-amber-50 left-3">
-        Subscribe for exclusive deals and fresh <br /> drops from Alphane 
+        Subscribe for exclusive deals and fresh <br /> drops from Shoeverse 
       </p>
   {/* <h1 className="absolute right-0 text-5xl text-amber-50 text-center font-helvetica font-bold top-4" >
     Our page has come to an end,<br /> but our relationship with you has not.
@@ -70,7 +70,7 @@ const FooterParallax = () => {
 <div className="w-full border-t border-[0.1px]  my-6"></div>
 
    <p className="mt-20 max-w-2xl text-lg  absolute  text-amber-50 left-3">
-        Subscribe for exclusive deals and fresh <br /> drops from Alphane 
+        Subscribe for exclusive deals and fresh <br /> drops from  
       </p>
 
       <div>
@@ -101,7 +101,7 @@ const FooterParallax = () => {
         </p>
       </div>
 
-     <h1 className="absolute text-[14rem] bottom-3 text-amber-50 " >SHOPVERSE</h1>
+     <h1 className="absolute text-[14rem] bottom-3 text-amber-50 " >SHOEVERSE</h1>
       <div className="mt-6 text-lg absolute bottom-2 right-2 text-amber-50">© 2025 Alphane Lab. All rights reserved.</div>
     </section>
   );

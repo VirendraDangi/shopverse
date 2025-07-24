@@ -326,7 +326,7 @@ const Products = () => {
                   <div className="space-y-3">
                     <button
                       onClick={() => cardhandler(product)}
-                      className="w-full bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-700 hover:via-green-700 hover:to-emerald-800 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-helvetica tracking-wide"
+                      className="w-full cursor-pointer bg-gradient-to-r  from-emerald-600 via-green-600 to-emerald-700 hover:from-emerald-700 hover:via-green-700 hover:to-emerald-800 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-helvetica tracking-wide"
                     >
                       Add to Cart
                     </button>

@@ -235,7 +235,7 @@ const ProductDetail = () => {
                   </button>
                   <button 
                        onClick={() => cardhandler(product)}
-                  className="py-4 px-6 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-xl font-semibold hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-105 transform font-helvetica">
+                  className="py-4 cursor-pointer px-6 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-xl font-semibold hover:from-emerald-700 hover:to-green-700 transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-105 transform font-helvetica">
                     🛒 Add to Cart
                   </button>
                 </div>

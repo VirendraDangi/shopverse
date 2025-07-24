@@ -5,6 +5,9 @@ import { NavLink, useNavigate } from "react-router-dom";
   import Lenis from '@studio-freight/lenis';
 import DemoScrollGallery from "../component/home/ScrollGallery";
 import FooterParallax from "../component/Footer";
+import MobileFooter from "../component/MobileFooter";
+import useIsMobile from "../Hooks/UseIsMobile";
+import useReloadOnBreakpointChange from "../Hooks/useReloadOnBreakpointChange";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -50,11 +53,11 @@ useEffect(() => {
     });
 
     // Image 1 scales in
-    tl.fromTo(
-      img1Ref.current,
-      { scale: 1, opacity: 1 },
-      { scale: 5, opacity: 1, duration: 8  }
-    );
+  tl.fromTo(
+  img1Ref.current,
+  { y: "50%", scale: 1, opacity: 0 },  
+  { y: "0%", scale: 5, opacity: 1, duration: 8, ease: "power2.out" } 
+);
 
 
     // 2. Texts come in from left/right
@@ -128,11 +131,12 @@ useEffect(() => {
         return "/home_img/page-2.jpg"; // default image
     }
   }
-
-
+ const isMobile = useIsMobile();
+  useReloadOnBreakpointChange();
 
   return (
     <  >
+
       <div className="relative text-amber-50 h-screen w-full overflow-hidden">
         {/* Background Video - Fixed Scaling */}
         <video
@@ -161,7 +165,7 @@ useEffect(() => {
 
         {/* Brand Logo */}
         <div className={`absolute top-6 left-6 text-amber-50 font-bold text-xl tracking-wider transition-all duration-1000 delay-200 z-40 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
-          SHOPVERSE
+          SHOEVERSE
         </div>
         
 
@@ -326,12 +330,14 @@ useEffect(() => {
 
 <div className="">
   <div>
+   
     <div ref={containerRef} className="h-[150vh]  bg-amber-50 relative overflow-hidden
                                         max-sm:h-auto max-sm:py-20">
       <div className="sticky top-0 h-screen flex items-center justify-center 
                       max-sm:relative max-sm:flex-col max-sm:gap-8 max-sm:h-auto">
-        
-        {/* Left Text */}
+         <h1 className="absloute top-0 font-helvetica font-bold text-5xl" >
+     Timeless Style, All-Day Comfort
+    </h1>
         <div
           ref={leftTextRef}
           className="absolute top-15 left-10 text-5xl text-black font-helvetica font-bold z-50
@@ -382,8 +388,7 @@ useEffect(() => {
 
 
 
-<FooterParallax/>
-
+ {isMobile ? < MobileFooter/> : <FooterParallax/>}
 
 
 
